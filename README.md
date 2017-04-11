@@ -22,7 +22,7 @@ pod "EFAlertController"
 
 ## Author
 
-EyreFree, zheng.xu03@ele.me
+EyreFree, eyrefree@eyrefree.org
 
 ## License
 
