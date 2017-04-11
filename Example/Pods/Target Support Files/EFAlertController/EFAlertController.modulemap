@@ -1,0 +1,6 @@
+framework module EFAlertController {
+  umbrella header "EFAlertController-umbrella.h"
+
+  export *
+  module * { export * }
+}

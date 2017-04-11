@@ -1,0 +1,22 @@
+{
+  "name": "EFAlertController",
+  "version": "0.1.0",
+  "summary": "A short description of EFAlertController.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/EyreFree/EFAlertController",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "EyreFree": "zheng.xu03@ele.me"
+  },
+  "source": {
+    "git": "https://github.com/EyreFree/EFAlertController.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "EFAlertController/Classes/**/*"
+}

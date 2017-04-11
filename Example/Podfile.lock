@@ -1,0 +1,16 @@
+PODS:
+  - EFAlertController (0.1.0)
+
+DEPENDENCIES:
+  - EFAlertController (from `../`)
+
+EXTERNAL SOURCES:
+  EFAlertController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  EFAlertController: 974ab7de0f04e1e3b09eca2dab70c14637d56927
+
+PODFILE CHECKSUM: 1f19751f55dcb8eef71c3374958e4d3bf9d1a5b3
+
+COCOAPODS: 1.2.0.beta.3
