@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'EFAlertController_Example' do
+  pod 'EFAlertController', :path => '../'
+
+  target 'EFAlertController_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
