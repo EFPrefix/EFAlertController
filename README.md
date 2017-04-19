@@ -9,7 +9,7 @@ A custom UIAlertController, you can set color and font of title, message and but
 
 ## Overview
 
-<img src="EFAlertController/Assets/example.png" width = "62.5%"/>
+<img src="Assets/example.png" width = "62.5%"/>
 
 ## Example
 
