@@ -7,6 +7,7 @@
 //
 
 #import "EFViewController.h"
+#import "EFAlertController.h"
 
 @interface EFViewController ()
 
@@ -14,16 +15,34 @@
 
 @implementation EFViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    [self addControl];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)addControl {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [button setTitle:@"Test" forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, 200, 60);
+    button.center = self.view.center;
+    [button addTarget:self action:@selector(testClicked) forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:button];
+}
+
+- (void)testClicked {
+    [EFAlertController setTitleFont:[UIFont systemFontOfSize:32]];
+    [EFAlertController setActionColors:@[UIColor.blackColor, UIColor.grayColor, UIColor.redColor]];
+    [EFAlertController setActionFonts:@[[UIFont systemFontOfSize:12], [UIFont systemFontOfSize:24], [UIFont systemFontOfSize:48]]];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                     style:UIAlertActionStyleCancel
+                                                   handler:nil];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK"
+                                                 style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * _Nonnull action) {
+                                                   NSLog(@"");
+                                               }];
+    [EFAlertController show:self title:@"Test Title" message:@"Test Message" action:@[cancel, ok]];
 }
 
 @end

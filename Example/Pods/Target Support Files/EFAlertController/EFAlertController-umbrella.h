@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "EFAlertController.h"
 
 FOUNDATION_EXPORT double EFAlertControllerVersionNumber;
 FOUNDATION_EXPORT const unsigned char EFAlertControllerVersionString[];
