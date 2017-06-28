@@ -10,21 +10,24 @@
 
 @interface EFAlertController : UIAlertController
 
-+ (void)setTitleColor:(UIColor*)color;
-+ (void)setTitleFont:(UIFont*)font;
-+ (void)setMessageColor:(UIColor*)color;
-+ (void)setMessageFont:(UIFont*)font;
+/// Recommand to less than 30
+- (void)setTitleFont:(UIFont*)font;
+- (void)setTitleColor:(UIColor*)color;
 
-// UIAlertActionStyleDefault = 0
-// UIAlertActionStyleCancel = 1
-// UIAlertActionStyleDestructive = 2
-+ (void)setActionColors:(NSArray<UIColor*> *)colors;
-+ (void)setActionFonts:(NSArray<UIFont*> *)fonts;
+/// Recommand to less than 24
+- (void)setMessageFont:(UIFont*)font;
+- (void)setMessageColor:(UIColor*)color;
 
-//  target: UIViewController
-//   title: String
-// message: String
-// NSArray: [UIAlertAction]
-+ (void)show:(UIViewController *)target title:(NSString *)title message:(NSString *)message action:(NSArray<UIAlertAction *> *)actions;
+/// Recommand to less than 50
+/// UIAlertActionStyleDefault = 0,
+/// UIAlertActionStyleCancel = 1,
+/// UIAlertActionStyleDestructive = 2
+- (void)setActionFonts:(NSArray<UIFont*> *)fonts;
+- (void)setActionColors:(NSArray<UIColor*> *)colors;
+
+- (void)show:(UIViewController *)target
+       title:(NSString *)title
+     message:(NSString *)message
+      action:(NSArray<UIAlertAction *> *)actions;
 
 @end

@@ -12,45 +12,59 @@
 #define EFAlertControllerMessageLabelTag    2333
 #define EFAlertControllerActionLabelTag     4555
 
-static UIColor *titleColor = nil;
-static UIFont *titleFont;
-static UIColor *messageColor;
-static UIFont *messageFont;
-static NSArray<UIColor*> *actionColors;
-static NSArray<UIFont*> *actionFonts;
+@interface EFAlertController ()
+
+@property (nonatomic, strong) UIColor *titleColorEF;
+@property (nonatomic, strong) UIFont *titleFontEF;
+
+@property (nonatomic, strong) UIColor *messageColorEF;
+@property (nonatomic, strong) UIFont *messageFontEF;
+
+@property (nonatomic, strong) NSArray<UIColor*> *actionColorsEF;
+@property (nonatomic, strong) NSArray<UIFont*> *actionFontsEF;
+
+@end
 
 // EFAlertController
 @implementation EFAlertController
 
-+ (void)setTitleColor:(UIColor*)color {
-    titleColor = color;
+- (void)setTitleColor:(UIColor*)color {
+    _titleColorEF = color;
 }
 
-+ (void)setTitleFont:(UIFont*)font {
-    titleFont = font;
+- (void)setTitleFont:(UIFont*)font {
+    _titleFontEF = font;
 }
 
-+ (void)setMessageColor:(UIColor*)color {
-    messageColor = color;
+- (void)setMessageColor:(UIColor*)color {
+    _messageColorEF = color;
 }
 
-+ (void)setMessageFont:(UIFont*)font {
-    messageFont = font;
+- (void)setMessageFont:(UIFont*)font {
+    _messageFontEF = font;
 }
 
-+ (void)setActionColors:(NSArray<UIColor*> *)colors {
-    actionColors = colors;
+- (void)setActionColors:(NSArray<UIColor*> *)colors {
+    _actionColorsEF = colors;
 }
 
-+ (void)setActionFonts:(NSArray<UIFont*> *)fonts {
-    actionFonts = fonts;
+- (void)setActionFonts:(NSArray<UIFont*> *)fonts {
+    _actionFontsEF = fonts;
 }
 
-+ (void)show:(UIViewController *)target title:(NSString *)title message:(NSString *)message action:(NSArray<UIAlertAction *> *)actions {
+- (void)show:(UIViewController *)target title:(NSString *)title message:(NSString *)message action:(NSArray<UIAlertAction *> *)actions {
     // 构建一个普通的 EFAlertController 并弹起
     EFAlertController *alertController = [EFAlertController alertControllerWithTitle:title
                                                                              message:message
                                                                       preferredStyle:UIAlertControllerStyleAlert];
+
+    [alertController setTitleColor:self.titleColorEF];
+    [alertController setTitleFont:self.titleFontEF];
+    [alertController setMessageColor:self.messageColorEF];
+    [alertController setMessageFont:self.messageFontEF];
+    [alertController setActionColors:self.actionColorsEF];
+    [alertController setActionFonts:self.actionFontsEF];
+
     for (id action in actions) {
         UIAlertAction *alertAction = (UIAlertAction *)action;
         UIColor *color = [alertController getActionColorWith:alertAction.style];
@@ -59,7 +73,7 @@ static NSArray<UIFont*> *actionFonts;
         }
         [alertController addAction:alertAction];
     }
-
+    
     [target presentViewController:alertController animated:YES completion:nil];
 }
 
@@ -89,20 +103,20 @@ static NSArray<UIFont*> *actionFonts;
     UIView *subView5 = subView4.subviews[0];
     // 取 Title Label 改样式并做标记
     UILabel *title = subView5.subviews[0];
-    if (titleColor != nil) {
-        title.textColor = titleColor;
+    if (self.titleColorEF != nil) {
+        title.textColor = self.titleColorEF;
     }
-    if (titleFont != nil) {
-        title.font = titleFont;
+    if (self.titleFontEF != nil) {
+        title.font = self.titleFontEF;
     }
     title.tag = EFAlertControllerTitleLabelTag;
     // 取 Message Label 改样式并做标记
     UILabel *message = subView5.subviews[1];
-    if (messageColor != nil) {
-        message.textColor = messageColor;
+    if (self.messageColorEF != nil) {
+        message.textColor = self.messageColorEF;
     }
-    if (messageFont != nil) {
-        message.font = messageFont;
+    if (self.messageFontEF != nil) {
+        message.font = self.messageFontEF;
     }
     message.tag = EFAlertControllerMessageLabelTag;
 }
@@ -209,23 +223,23 @@ static NSArray<UIFont*> *actionFonts;
 }
 
 - (UIFont *)getActionFontWith:(UIAlertActionStyle)style {
-    if (actionFonts == nil) {
+    if (self.actionFontsEF == nil) {
         return nil;
     }
-    if (actionFonts.count <= style) {
+    if (self.actionFontsEF.count <= style) {
         return nil;
     }
-    return actionFonts[style];
+    return self.actionFontsEF[style];
 }
 
 - (UIColor *)getActionColorWith:(UIAlertActionStyle)style {
-    if (actionColors == nil) {
+    if (self.actionColorsEF == nil) {
         return nil;
     }
-    if (actionColors.count <= style) {
+    if (self.actionColorsEF.count <= style) {
         return nil;
     }
-    return actionColors[style];
+    return self.actionColorsEF[style];
 }
 
 @end
