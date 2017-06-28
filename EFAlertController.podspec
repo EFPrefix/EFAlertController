@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EFAlertController'
-  s.version          = '0.0.1'
+  s.version          = '1.0.0'
   s.summary          = 'A custom UIAlertController.'
 
 # This description is used to generate tags and improve search results.

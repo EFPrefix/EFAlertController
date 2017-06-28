@@ -25,7 +25,7 @@ EFAlertController is available through [CocoaPods](http://cocoapods.org). To ins
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "EFAlertController", '~> 0.0.1'
+pod "EFAlertController", '~> 1.0.0'
 ```
 
 ## Author
