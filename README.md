@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/EFAlertController.svg?style=flat)](http://cocoapods.org/pods/EFAlertController)
 [![License](https://img.shields.io/cocoapods/l/EFAlertController.svg?style=flat)](http://cocoapods.org/pods/EFAlertController)
 [![Platform](https://img.shields.io/cocoapods/p/EFAlertController.svg?style=flat)](http://cocoapods.org/pods/EFAlertController)
+[![QQ Group](http://image.eyrefree.org/QQGroup.png)](http://shang.qq.com/wpa/qunwpa?idkey=d0f732585dcb0c6f2eb26bc9e0327f6305d18260eeba89ed26a201b520c572c0)
 
 A custom UIAlertController, you can set color and font of title, message and button.
 
